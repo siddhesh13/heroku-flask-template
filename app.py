@@ -66,7 +66,7 @@ def trackPerson(device_id, person_id):
             dome1.remove(g.person_id)
     return "<h3> OK </h3>"
 
-@app.route('remove/<device_id>/<person_id>')
+@app.route('/remove/<device_id>/<person_id>')
 def remove(device_id, person_id):
     g.device_id = device_id
     g.person_id = person_id
