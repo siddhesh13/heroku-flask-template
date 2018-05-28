@@ -39,6 +39,14 @@ def trackPerson(device_id, person_id):
             dome3.remove(g.person_id)
         elif g.person_id in dome4:
             dome4.remove(g.person_id)
+        elif g.person_id in domeR1:
+            domeR1.remove(g.person_id)
+        elif g.person_id in domeR2:
+            domeR2.remove(g.person_id)
+        elif g.person_id in dome1R3:
+            domeR3.remove(g.person_id)
+        elif g.person_id in dome1R4:
+            domeR4.remove(g.person_id)    
 
     if g.device_id == "beacon2":
         dome2.append(g.person_id)
@@ -48,6 +56,14 @@ def trackPerson(device_id, person_id):
             dome4.remove(g.person_id)
         elif g.person_id in dome1:
             dome1.remove(g.person_id)
+        elif g.person_id in domeR1:
+            domeR1.remove(g.person_id)
+        elif g.person_id in domeR2:
+            domeR2.remove(g.person_id)
+        elif g.person_id in dome1R3:
+            domeR3.remove(g.person_id)
+        elif g.person_id in dome1R4:
+            domeR4.remove(g.person_id)    
     if g.device_id == "beacon3":
         dome3.append(g.person_id)
         if g.person_id in dome2:
@@ -56,6 +72,14 @@ def trackPerson(device_id, person_id):
             dome1.remove(g.person_id)
         elif g.person_id in dome4:
             dome4.remove(g.person_id)
+        elif g.person_id in domeR1:
+            domeR1.remove(g.person_id)
+        elif g.person_id in domeR2:
+            domeR2.remove(g.person_id)
+        elif g.person_id in dome1R3:
+            domeR3.remove(g.person_id)
+        elif g.person_id in dome1R4:
+            domeR4.remove(g.person_id)    
     if g.device_id == "beacon4":
         dome4.append(g.person_id)
         if g.person_id in dome2:
@@ -64,6 +88,14 @@ def trackPerson(device_id, person_id):
             dome3.remove(g.person_id)
         elif g.person_id in dome1:
             dome1.remove(g.person_id)
+        elif g.person_id in domeR1:
+            domeR1.remove(g.person_id)
+        elif g.person_id in domeR2:
+            domeR2.remove(g.person_id)
+        elif g.person_id in dome1R3:
+            domeR3.remove(g.person_id)
+        elif g.person_id in dome1R4:
+            domeR4.remove(g.person_id)    
     return "<h3> OK </h3>"
 
 @app.route('/remove/<device_id>/<person_id>')
