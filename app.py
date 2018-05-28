@@ -12,7 +12,10 @@ dome1 = []
 dome2 = []
 dome3 = []
 dome4 = []
-
+domeR1 = []
+domeR2 = []
+domeR3 = []
+domeR4 = []
 
 @app.route('/')
 def page():
@@ -20,7 +23,7 @@ def page():
 
 @app.route('/live')
 def status():
-    return render_template('responsive.html', dome1=dome1, dome2=dome2, dome3=dome3, dome4=dome4)
+    return render_template('responsive.html', dome1=dome1, dome2=dome2, dome3=dome3, dome4=dome4, domeR1=domeR1, domeR2=domeR2, domeR3=domeR3, domeR4=domeR4)
 
 
 @app.route('/<device_id>/<person_id>')
@@ -61,6 +64,33 @@ def trackPerson(device_id, person_id):
             dome3.remove(g.person_id)
         elif g.person_id in dome1:
             dome1.remove(g.person_id)
+    return "<h3> OK </h3>"
+
+@app.route('remove/<device_id>/<person_id>')
+def remove(device_id, person_id):
+    g.device_id = device_id
+    g.person_id = person_id
+    #person_name = os.environ.get(g.person_id)
+    if g.device_id == "beacon1":
+        domeR1.append(g.person_id)
+        if g.person_id in dome1:
+            dome2.remove(g.person_id)
+
+    if g.device_id == "beacon2":
+        domeR2.append(g.person_id)
+        if g.person_id in dome2:
+            dome3.remove(g.person_id)
+      
+    if g.device_id == "beacon3":
+        domeR3.append(g.person_id)
+        if g.person_id in dome3:
+            dome2.remove(g.person_id)
+      
+    if g.device_id == "beacon4":
+        domeR4.append(g.person_id)
+        if g.person_id in dome4:
+            dome2.remove(g.person_id)
+        
     return "<h3> OK </h3>"
 
 if __name__ == '__main__':

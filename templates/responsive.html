@@ -18,6 +18,10 @@
     border: 3px solid white;
   
 }
+.lost{
+  font-size:35px;
+    font-color: red;
+}
 .blinking{
     font-size:35px;
     font-color: #691E9E;
@@ -55,12 +59,18 @@
     {%  for item in dome1 %}
         <p class="blinking"> {{ item }}</p>
     {%  endfor %}
+    {%  for item in domeR1 %}
+        <p class="lost"> {{ item }} </p>
+    {%  endfor %}
   </div>
 
   <div class="col" style="background:#a3d2e3">
     <h1 style="color:#2D5779">Dome2</h1>
     {%  for item in dome2 %}
         <p class="blinking"> {{ item }} </p>
+    {%  endfor %}
+    {%  for item in domeR2 %}
+        <p class="lost"> {{ item }} </p>
     {%  endfor %}
   </div>
 
@@ -69,11 +79,17 @@
     {%  for item in dome3 %}
         <p class="blinking"> {{ item }}</p>
     {%  endfor %}
+    {%  for item in domeR3 %}
+        <p class="lost"> {{ item }} </p>
+    {%  endfor %}
   </div>
   <div class="col" style="background:#a3d2e3">
     <h1 style="color:#2D5779">Dome4</h1>
     {%  for item in dome4 %}
         <p class="blinking"> {{ item }}</p>
+    {%  endfor %}
+    {%  for item in domeR4 %}
+        <p class="lost"> {{ item }} </p>
     {%  endfor %}
   </div>
 </div>
