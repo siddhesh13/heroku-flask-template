@@ -74,22 +74,22 @@ def remove(device_id, person_id):
     if g.device_id == "beacon1":
         domeR1.append(g.person_id)
         if g.person_id in dome1:
-            dome2.remove(g.person_id)
+            dome1.remove(g.person_id)
 
     if g.device_id == "beacon2":
         domeR2.append(g.person_id)
         if g.person_id in dome2:
-            dome3.remove(g.person_id)
+            dome2.remove(g.person_id)
       
     if g.device_id == "beacon3":
         domeR3.append(g.person_id)
         if g.person_id in dome3:
-            dome2.remove(g.person_id)
+            dome3.remove(g.person_id)
       
     if g.device_id == "beacon4":
         domeR4.append(g.person_id)
         if g.person_id in dome4:
-            dome2.remove(g.person_id)
+            dome4.remove(g.person_id)
         
     return "<h3> OK </h3>"
 
