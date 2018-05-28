@@ -43,9 +43,9 @@ def trackPerson(device_id, person_id):
             domeR1.remove(g.person_id)
         elif g.person_id in domeR2:
             domeR2.remove(g.person_id)
-        elif g.person_id in dome1R3:
+        elif g.person_id in domeR3:
             domeR3.remove(g.person_id)
-        elif g.person_id in dome1R4:
+        elif g.person_id in domeR4:
             domeR4.remove(g.person_id)    
 
     if g.device_id == "beacon2":
@@ -60,9 +60,9 @@ def trackPerson(device_id, person_id):
             domeR1.remove(g.person_id)
         elif g.person_id in domeR2:
             domeR2.remove(g.person_id)
-        elif g.person_id in dome1R3:
+        elif g.person_id in domeR3:
             domeR3.remove(g.person_id)
-        elif g.person_id in dome1R4:
+        elif g.person_id in domeR4:
             domeR4.remove(g.person_id)    
     if g.device_id == "beacon3":
         dome3.append(g.person_id)
@@ -76,9 +76,9 @@ def trackPerson(device_id, person_id):
             domeR1.remove(g.person_id)
         elif g.person_id in domeR2:
             domeR2.remove(g.person_id)
-        elif g.person_id in dome1R3:
+        elif g.person_id in domeR3:
             domeR3.remove(g.person_id)
-        elif g.person_id in dome1R4:
+        elif g.person_id in domeR4:
             domeR4.remove(g.person_id)    
     if g.device_id == "beacon4":
         dome4.append(g.person_id)
@@ -92,9 +92,9 @@ def trackPerson(device_id, person_id):
             domeR1.remove(g.person_id)
         elif g.person_id in domeR2:
             domeR2.remove(g.person_id)
-        elif g.person_id in dome1R3:
+        elif g.person_id in domeR3:
             domeR3.remove(g.person_id)
-        elif g.person_id in dome1R4:
+        elif g.person_id in domeR4:
             domeR4.remove(g.person_id)    
     return "<h3> OK </h3>"
 
