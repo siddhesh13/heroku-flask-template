@@ -32,7 +32,8 @@ def trackPerson(device_id, person_id):
     g.person_id = person_id
     #person_name = os.environ.get(g.person_id)
     if g.device_id == "beacon1":
-        dome1.append(g.person_id)
+        if g.person_id not in dome1: 
+            dome1.append(g.person_id)
         if g.person_id in dome2:
             dome2.remove(g.person_id)
         elif g.person_id in dome3:
@@ -49,7 +50,8 @@ def trackPerson(device_id, person_id):
             domeR4.remove(g.person_id)    
 
     if g.device_id == "beacon2":
-        dome2.append(g.person_id)
+        if g.person_id not in dome2: 
+            dome2.append(g.person_id)
         if g.person_id in dome3:
             dome3.remove(g.person_id)
         elif g.person_id in dome4:
@@ -65,7 +67,8 @@ def trackPerson(device_id, person_id):
         elif g.person_id in domeR4:
             domeR4.remove(g.person_id)    
     if g.device_id == "beacon3":
-        dome3.append(g.person_id)
+        if g.person_id not in dome3: 
+            dome3.append(g.person_id)
         if g.person_id in dome2:
             dome2.remove(g.person_id)
         elif g.person_id in dome1:
@@ -81,7 +84,8 @@ def trackPerson(device_id, person_id):
         elif g.person_id in domeR4:
             domeR4.remove(g.person_id)    
     if g.device_id == "beacon4":
-        dome4.append(g.person_id)
+        if g.person_id not in dome4: 
+            dome4.append(g.person_id)
         if g.person_id in dome2:
             dome2.remove(g.person_id)
         elif g.person_id in dome3:
