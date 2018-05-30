@@ -30,102 +30,102 @@ def status():
 def trackPerson(device_id, person_id):
     g.device_id = device_id
     g.person_id = person_id
-    #person_name = os.environ.get(g.person_id)
+    person_name = os.environ.get(g.person_id)
     if g.device_id == "beacon1":
-        if g.person_id not in dome1: 
-            dome1.append(g.person_id)
-        if g.person_id in dome2:
-            dome2.remove(g.person_id)
-        elif g.person_id in dome3:
-            dome3.remove(g.person_id)
-        elif g.person_id in dome4:
-            dome4.remove(g.person_id)
-        elif g.person_id in domeR1:
-            domeR1.remove(g.person_id)
-        elif g.person_id in domeR2:
-            domeR2.remove(g.person_id)
-        elif g.person_id in domeR3:
-            domeR3.remove(g.person_id)
-        elif g.person_id in domeR4:
-            domeR4.remove(g.person_id)    
+        if person_name not in dome1: 
+            dome1.append(person_name)
+        if person_name in dome2:
+            dome2.remove(person_name)
+        elif person_name in dome3:
+            dome3.remove(person_name)
+        elif person_name in dome4:
+            dome4.remove(person_name)
+        elif person_name in domeR1:
+            domeR1.remove(person_name)
+        elif person_name in domeR2:
+            domeR2.remove(person_name)
+        elif person_name in domeR3:
+            domeR3.remove(person_name)
+        elif person_name in domeR4:
+            domeR4.remove(person_name)    
 
     if g.device_id == "beacon2":
-        if g.person_id not in dome2: 
-            dome2.append(g.person_id)
-        if g.person_id in dome3:
-            dome3.remove(g.person_id)
-        elif g.person_id in dome4:
-            dome4.remove(g.person_id)
-        elif g.person_id in dome1:
-            dome1.remove(g.person_id)
-        elif g.person_id in domeR1:
-            domeR1.remove(g.person_id)
-        elif g.person_id in domeR2:
-            domeR2.remove(g.person_id)
-        elif g.person_id in domeR3:
-            domeR3.remove(g.person_id)
-        elif g.person_id in domeR4:
-            domeR4.remove(g.person_id)    
+        if person_name not in dome2: 
+            dome2.append(person_name)
+        if person_name in dome3:
+            dome3.remove(person_name)
+        elif person_name in dome4:
+            dome4.remove(person_name)
+        elif person_name in dome1:
+            dome1.remove(person_name)
+        elif person_name in domeR1:
+            domeR1.remove(person_name)
+        elif person_name in domeR2:
+            domeR2.remove(person_name)
+        elif person_name in domeR3:
+            domeR3.remove(person_name)
+        elif person_name in domeR4:
+            domeR4.remove(person_name)    
     if g.device_id == "beacon3":
-        if g.person_id not in dome3: 
-            dome3.append(g.person_id)
-        if g.person_id in dome2:
-            dome2.remove(g.person_id)
-        elif g.person_id in dome1:
-            dome1.remove(g.person_id)
-        elif g.person_id in dome4:
-            dome4.remove(g.person_id)
-        elif g.person_id in domeR1:
-            domeR1.remove(g.person_id)
-        elif g.person_id in domeR2:
-            domeR2.remove(g.person_id)
-        elif g.person_id in domeR3:
-            domeR3.remove(g.person_id)
-        elif g.person_id in domeR4:
-            domeR4.remove(g.person_id)    
+        if person_name not in dome3: 
+            dome3.append(person_name)
+        if person_name in dome2:
+            dome2.remove(person_name)
+        elif person_name in dome1:
+            dome1.remove(person_name)
+        elif person_name in dome4:
+            dome4.remove(person_name)
+        elif person_name in domeR1:
+            domeR1.remove(person_name)
+        elif person_name in domeR2:
+            domeR2.remove(person_name)
+        elif person_name in domeR3:
+            domeR3.remove(person_name)
+        elif person_name in domeR4:
+            domeR4.remove(person_name)    
     if g.device_id == "beacon4":
-        if g.person_id not in dome4: 
-            dome4.append(g.person_id)
-        if g.person_id in dome2:
-            dome2.remove(g.person_id)
-        elif g.person_id in dome3:
-            dome3.remove(g.person_id)
-        elif g.person_id in dome1:
-            dome1.remove(g.person_id)
-        elif g.person_id in domeR1:
-            domeR1.remove(g.person_id)
-        elif g.person_id in domeR2:
-            domeR2.remove(g.person_id)
-        elif g.person_id in domeR3:
-            domeR3.remove(g.person_id)
-        elif g.person_id in domeR4:
-            domeR4.remove(g.person_id)    
+        if person_name not in dome4: 
+            dome4.append(person_name)
+        if person_name in dome2:
+            dome2.remove(person_name)
+        elif person_name in dome3:
+            dome3.remove(person_name)
+        elif person_name in dome1:
+            dome1.remove(person_name)
+        elif person_name in domeR1:
+            domeR1.remove(person_name)
+        elif person_name in domeR2:
+            domeR2.remove(person_name)
+        elif person_name in domeR3:
+            domeR3.remove(person_name)
+        elif person_name in domeR4:
+            domeR4.remove(person_name)    
     return "<h3> OK </h3>"
 
 @app.route('/remove/<device_id>/<person_id>')
 def remove(device_id, person_id):
     g.device_id = device_id
     g.person_id = person_id
-    #person_name = os.environ.get(g.person_id)
+    person_name = os.environ.get(g.person_id)
     if g.device_id == "beacon1":
-        domeR1.append(g.person_id)
-        if g.person_id in dome1:
-            dome1.remove(g.person_id)
+        domeR1.append(person_name)
+        if person_name in dome1:
+            dome1.remove(person_name)
 
     if g.device_id == "beacon2":
-        domeR2.append(g.person_id)
-        if g.person_id in dome2:
-            dome2.remove(g.person_id)
+        domeR2.append(person_name)
+        if person_name in dome2:
+            dome2.remove(person_name)
       
     if g.device_id == "beacon3":
-        domeR3.append(g.person_id)
-        if g.person_id in dome3:
-            dome3.remove(g.person_id)
+        domeR3.append(person_name)
+        if person_name in dome3:
+            dome3.remove(person_name)
       
     if g.device_id == "beacon4":
-        domeR4.append(g.person_id)
-        if g.person_id in dome4:
-            dome4.remove(g.person_id)
+        domeR4.append(person_name)
+        if person_name in dome4:
+            dome4.remove(person_name)
         
     return "<h3> OK </h3>"
 
