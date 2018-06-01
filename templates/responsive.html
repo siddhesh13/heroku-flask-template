@@ -20,7 +20,11 @@
 }
 .lost{
   font-size:35px;
-    font-color: red;
+    font-color: #800000 ;
+    position: relative;
+
+  text-align: center;
+  text-transform: capitalize;
 }
 .blinking{
     font-size:35px;
@@ -29,14 +33,14 @@
 
   text-align: center;
   text-transform: capitalize;
-	animation:blinkingText 2s infinite;
+  animation:blinkingText 2s infinite;
 }
 @keyframes blinkingText{
-	0%{		color: #691E9E;	}
-	49%{	color: #691E9E;	}
-	50%{	color: transparent;	}
-	99%{	color:transparent;	}
-	100%{	color: #000;	}
+  0%{   color: #691E9E; }
+  49%{  color: #691E9E; }
+  50%{  color: transparent; }
+  99%{  color:transparent;  }
+  100%{ color: #000;  }
 }
 
 
@@ -59,9 +63,7 @@
     {%  for item in dome1 %}
         <p class="blinking"> {{ item }}</p>
     {%  endfor %}
-    {%  for item in domeR1 %}
-        <p class="lost"> {{ item }} </p>
-    {%  endfor %}
+  
   </div>
 
   <div class="col" style="background:#a3d2e3">
@@ -69,9 +71,7 @@
     {%  for item in dome2 %}
         <p class="blinking"> {{ item }} </p>
     {%  endfor %}
-    {%  for item in domeR2 %}
-        <p class="lost"> {{ item }} </p>
-    {%  endfor %}
+    
   </div>
 
   <div class="col" style="background:#a3d2e3">
@@ -79,18 +79,14 @@
     {%  for item in dome3 %}
         <p class="blinking"> {{ item }}</p>
     {%  endfor %}
-    {%  for item in domeR3 %}
-        <p class="lost"> {{ item }} </p>
-    {%  endfor %}
+   
   </div>
   <div class="col" style="background:#a3d2e3">
     <h1 style="color:#2D5779">Dome4</h1>
     {%  for item in dome4 %}
         <p class="blinking"> {{ item }}</p>
     {%  endfor %}
-    {%  for item in domeR4 %}
-        <p class="lost"> {{ item }} </p>
-    {%  endfor %}
+    
   </div>
 </div>
 
