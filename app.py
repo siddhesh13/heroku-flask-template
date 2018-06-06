@@ -4,7 +4,6 @@ app = Flask(__name__)
 
 import os
 import os.path
-import requests
 import time
 import csv
 data = {'Band': 'A1', 'Name': 'Alex', 'Location': 'Dome1', 'In_Time': "1", 'Out_Time': "2", 'Date': "15"}
