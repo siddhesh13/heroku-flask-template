@@ -24,7 +24,7 @@ def page():
 
 @app.route('/live')
 def status():
-    return render_template('responsive.html', dome1=dome1, dome2=dome2, dome3=dome3, dome4=dome4, domeR1=domeR1, domeR2=domeR2, domeR3=domeR3, domeR4=domeR4)
+    return render_template('responsive.html', dome1=dome1, dome2=dome2, dome3=dome3, dome4=dome4)
 
 @app.route("/download")
 def download():
