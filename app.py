@@ -44,7 +44,7 @@ def getPlotCSV():
 def trackPerson(device_id, person_id):
     g.device_id = device_id
     g.person_id = person_id
-    #person_name = os.environ.get(g.person_id)
+    person_name = os.environ.get(g.person_id)
     if g.device_id == "beacon1":
         data['Location'] = g.device_id
         data['Name'] = g.person_id
