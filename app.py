@@ -67,7 +67,7 @@ def trackPerson(device_id, person_id):
     g.person_id = person_id
     person_name = os.environ.get(g.person_id)
     location = os.environ.get(g.device_id)
-    if person_name != data['Name'] && location != data['Location']:
+    if person_name != data['Name'] and location != data['Location']:
        if g.device_id == "beacon1":
           data['Location'] = location
           data['Name'] = person_name
