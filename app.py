@@ -8,7 +8,7 @@ import requests
 import time
 import csv
 data = {'Band': 'A1', 'Name': 'Alex', 'Location': 'Dome1', 'In_Time': "1", 'Out_Time': "2", 'Date': "15"}
-ifttt_key = ""
+ifttt_key = "iYiYhj3KyPFEwyVRuJzEb"
 
 
 app = Flask(__name__)
@@ -47,7 +47,7 @@ def error_email_alert(key, band_id, person_name, location):
     report["value2"] = person_name
     report["value3"] = location
   
-    requests.post("https://maker.ifttt.com/trigger/error/with/key/" + str(key), data=report)    
+    requests.post("https://maker.ifttt.com/trigger/update_sheet/with/key/" + str(key), data=report)    
 
 @app.route('/<device_id>/<person_id>')
 def trackPerson(device_id, person_id):
