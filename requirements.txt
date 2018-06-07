@@ -4,4 +4,4 @@ gunicorn
 itsdangerous
 Jinja2
 peewee
-Werkzeug
+Werkzeugrequests
