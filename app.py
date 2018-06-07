@@ -17,7 +17,7 @@ dome1 = []
 dome2 = []
 dome3 = []
 dome4 = []
-
+area = []
 
 @app.route('/')
 def page():
@@ -25,8 +25,14 @@ def page():
 
 @app.route('/live')
 def status():
-    return render_template('responsive.html', dome1=dome1, dome2=dome2, dome3=dome3, dome4=dome4)
+    area.append(os.environ.get("beacon1"))
+    area.append(os.environ.get("beacon2"))
+    area.append(os.environ.get("beacon3"))
+    area.append(os.environ.get("beacon4"))
+    return render_template('responsive.html', dome1=dome1, dome2=dome2, dome3=dome3, dome4=dome4, area=area)
 
+
+       
 @app.route("/download")
 def download():
     return render_template('download.html')
@@ -54,51 +60,52 @@ def trackPerson(device_id, person_id):
     g.device_id = device_id
     g.person_id = person_id
     person_name = os.environ.get(g.person_id)
+    location = os.environ.get(g.device_id)
     if g.device_id == "beacon1":
-        data['Location'] = g.device_id
-        data['Name'] = g.person_id
+        data['Location'] = location
+        data['Name'] = person_name
         data['Band'] = g.person_id
-        dome1.append(g.person_id)
+        dome1.append(person_name)
         if g.person_id in dome2:
-            dome2.remove(g.person_id)
+            dome2.remove(person_name)
         elif g.person_id in dome3:
-            dome3.remove(g.person_id)
+            dome3.remove(person_name)
         elif g.person_id in dome4:
-            dome4.remove(g.person_id)
+            dome4.remove(person_name)
 
     if g.device_id == "beacon2":
-        data['Location'] = g.device_id
-        data['Name'] = g.person_id
+        data['Location'] = location
+        data['Name'] = person_name
         data['Band'] = g.person_id
-        dome2.append(g.person_id)
+        dome2.append(person_name)
         if g.person_id in dome3:
-            dome3.remove(g.person_id)
+            dome3.remove(person_name)
         elif g.person_id in dome4:
-            dome4.remove(g.person_id)
+            dome4.remove(person_name)
         elif g.person_id in dome1:
-            dome1.remove(g.person_id)
+            dome1.remove(person_name)
     if g.device_id == "beacon3":
-        data['Location'] = g.device_id
-        data['Name'] = g.person_id
+        data['Location'] = location
+        data['Name'] = person_name
         data['Band'] = g.person_id
-        dome3.append(g.person_id)
+        dome3.append(person_name)
         if g.person_id in dome2:
-            dome2.remove(g.person_id)
+            dome2.remove(person_name)
         elif g.person_id in dome1:
-            dome1.remove(g.person_id)
+            dome1.remove(person_name)
         elif g.person_id in dome4:
-            dome4.remove(g.person_id)
+            dome4.remove(person_name)
     if g.device_id == "beacon4":
-        data['Location'] = g.device_id
-        data['Name'] = g.person_id
+        data['Location'] = location
+        data['Name'] = person_name
         data['Band'] = g.person_id
-        dome4.append(g.person_id)
+        dome4.append(person_name)
         if g.person_id in dome2:
-            dome2.remove(g.person_id)
+            dome2.remove(person_name)
         elif g.person_id in dome3:
-            dome3.remove(g.person_id)
+            dome3.remove(person_name)
         elif g.person_id in dome1:
-            dome1.remove(g.person_id)
+            dome1.remove(person_name)
     '''
     file_basename = 'output.csv'
     server_path = os.path.dirname(os.path.abspath(__file__))
