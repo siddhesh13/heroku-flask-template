@@ -113,6 +113,10 @@ def trackPerson(device_id, person_id):
              dome3.remove(person_name)
           elif g.person_id in dome1:
              dome1.remove(person_name)
+       email_alert(ifttt_key, data['Band'],data['Name'],data['Location'])
+
+         
+    return "<h3> OK </h3>" 
     '''
     file_basename = 'output.csv'
     server_path = os.path.dirname(os.path.abspath(__file__))
@@ -130,8 +134,7 @@ def trackPerson(device_id, person_id):
         w_file.write('%s,%s,%s,%s,%s,%s \n' %(data['Band'],data['Name'],data['Location'],data['In_Time'],data['Out_Time'],data['Date']))
     w_file.close()
 '''
-       email_alert(ifttt_key, data['Band'],data['Name'],data['Location'])
-       return "<h3> OK </h3>"
+       
 
 
 
