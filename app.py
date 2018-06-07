@@ -21,7 +21,13 @@ area = []
 
 @app.route('/')
 def page():
-   return render_template('index.html')
+   return render_template('about.html')
+
+@app.route('/contact')
+def page():
+   return render_template('contact.html')
+
+
 
 @app.route('/live')
 def status():
