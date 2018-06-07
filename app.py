@@ -71,44 +71,45 @@ def trackPerson(device_id, person_id):
        data['Location'] = location
        data['Name'] = person_name
        data['Band'] = g.person_id
-       if g.device_id == "beacon1":
-          
-          dome1.append(person_name)
-          if g.person_id in dome2:
-             dome2.remove(person_name)
-          if g.person_id in dome3:
-             dome3.remove(person_name)
-          if g.person_id in dome4:
-             dome4.remove(person_name)
-
-       if g.device_id == "beacon2":
-          
-          dome2.append(person_name)
-          if g.person_id in dome3:
-             dome3.remove(person_name)
-          if g.person_id in dome4:
-             dome4.remove(person_name)
-          if g.person_id in dome1:
-             dome1.remove(person_name)
-       if g.device_id == "beacon3":
-          
-          dome3.append(person_name)
-          if g.person_id in dome2:
-             dome2.remove(person_name)
-          if g.person_id in dome1:
-             dome1.remove(person_name)
-          if g.person_id in dome4:
-             dome4.remove(person_name)
-       if g.device_id == "beacon4":
-          
-          dome4.append(person_name)
-          if g.person_id in dome2:
-             dome2.remove(person_name)
-          if g.person_id in dome3:
-             dome3.remove(person_name)
-          if g.person_id in dome1:
-             dome1.remove(person_name)
        email_alert(ifttt_key, data['Band'],data['Name'],data['Location'])
+    data['Location'] = location
+    data['Name'] = person_name
+    data['Band'] = g.person_id
+    if g.device_id == "beacon1":     
+       dome1.append(person_name)
+       if g.person_id in dome2:
+          dome2.remove(person_name)
+       if g.person_id in dome3:
+          dome3.remove(person_name)
+       if g.person_id in dome4:
+          dome4.remove(person_name)
+
+    if g.device_id == "beacon2":   
+       dome2.append(person_name)
+       if g.person_id in dome3:
+          dome3.remove(person_name)
+       if g.person_id in dome4:
+          dome4.remove(person_name)
+       if g.person_id in dome1:
+          dome1.remove(person_name)
+
+    if g.device_id == "beacon3":     
+       dome3.append(person_name)
+       if g.person_id in dome2:
+          dome2.remove(person_name)
+       if g.person_id in dome1:
+          dome1.remove(person_name)
+       if g.person_id in dome4:
+          dome4.remove(person_name)
+    if g.device_id == "beacon4":      
+       dome4.append(person_name)
+       if g.person_id in dome2:
+          dome2.remove(person_name)
+       if g.person_id in dome3:
+          dome3.remove(person_name)
+       if g.person_id in dome1:
+          dome1.remove(person_name)
+    
 
          
     return "<h3> OK </h3>" 
