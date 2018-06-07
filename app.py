@@ -68,10 +68,11 @@ def trackPerson(device_id, person_id):
     person_name = os.environ.get(g.person_id)
     location = os.environ.get(g.device_id)
     if person_name != data['Name'] or location != data['Location']:
+       data['Location'] = location
+       data['Name'] = person_name
+       data['Band'] = g.person_id
        if g.device_id == "beacon1":
-          data['Location'] = location
-          data['Name'] = person_name
-          data['Band'] = g.person_id
+          
           dome1.append(person_name)
           if g.person_id in dome2:
              dome2.remove(person_name)
@@ -81,9 +82,7 @@ def trackPerson(device_id, person_id):
              dome4.remove(person_name)
 
        if g.device_id == "beacon2":
-          data['Location'] = location
-          data['Name'] = person_name
-          data['Band'] = g.person_id
+          
           dome2.append(person_name)
           if g.person_id in dome3:
              dome3.remove(person_name)
@@ -92,9 +91,7 @@ def trackPerson(device_id, person_id):
           elif g.person_id in dome1:
              dome1.remove(person_name)
        if g.device_id == "beacon3":
-          data['Location'] = location
-          data['Name'] = person_name
-          data['Band'] = g.person_id
+          
           dome3.append(person_name)
           if g.person_id in dome2:
              dome2.remove(person_name)
@@ -103,9 +100,7 @@ def trackPerson(device_id, person_id):
           elif g.person_id in dome4:
              dome4.remove(person_name)
        if g.device_id == "beacon4":
-          data['Location'] = location
-          data['Name'] = person_name
-          data['Band'] = g.person_id
+          
           dome4.append(person_name)
           if g.person_id in dome2:
              dome2.remove(person_name)
