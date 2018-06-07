@@ -7,7 +7,7 @@ import os.path
 import requests
 import time
 import csv
-data = {'Band': 'A1', 'Name': 'Alex', 'Location': 'Dome1', 'In_Time': "1", 'Out_Time': "2", 'Date': "15"}
+data = {'Band': 'x', 'Name': 'xxx', 'Location': 'xxx', 'In_Time': "1", 'Out_Time': "2", 'Date': "15"}
 ifttt_key = "iYiYhj3KyPFEwyVRuJzEb"
 
 
@@ -67,51 +67,52 @@ def trackPerson(device_id, person_id):
     g.person_id = person_id
     person_name = os.environ.get(g.person_id)
     location = os.environ.get(g.device_id)
-    if g.device_id == "beacon1":
-        data['Location'] = location
-        data['Name'] = person_name
-        data['Band'] = g.person_id
-        dome1.append(person_name)
-        if g.person_id in dome2:
-            dome2.remove(person_name)
-        elif g.person_id in dome3:
-            dome3.remove(person_name)
-        elif g.person_id in dome4:
-            dome4.remove(person_name)
+    if person_name != data['Name'] && location != data['Location']:
+       if g.device_id == "beacon1":
+          data['Location'] = location
+          data['Name'] = person_name
+          data['Band'] = g.person_id
+          dome1.append(person_name)
+          if g.person_id in dome2:
+             dome2.remove(person_name)
+          elif g.person_id in dome3:
+             dome3.remove(person_name)
+          elif g.person_id in dome4:
+             dome4.remove(person_name)
 
-    if g.device_id == "beacon2":
-        data['Location'] = location
-        data['Name'] = person_name
-        data['Band'] = g.person_id
-        dome2.append(person_name)
-        if g.person_id in dome3:
-            dome3.remove(person_name)
-        elif g.person_id in dome4:
-            dome4.remove(person_name)
-        elif g.person_id in dome1:
-            dome1.remove(person_name)
-    if g.device_id == "beacon3":
-        data['Location'] = location
-        data['Name'] = person_name
-        data['Band'] = g.person_id
-        dome3.append(person_name)
-        if g.person_id in dome2:
-            dome2.remove(person_name)
-        elif g.person_id in dome1:
-            dome1.remove(person_name)
-        elif g.person_id in dome4:
-            dome4.remove(person_name)
-    if g.device_id == "beacon4":
-        data['Location'] = location
-        data['Name'] = person_name
-        data['Band'] = g.person_id
-        dome4.append(person_name)
-        if g.person_id in dome2:
-            dome2.remove(person_name)
-        elif g.person_id in dome3:
-            dome3.remove(person_name)
-        elif g.person_id in dome1:
-            dome1.remove(person_name)
+       if g.device_id == "beacon2":
+          data['Location'] = location
+          data['Name'] = person_name
+          data['Band'] = g.person_id
+          dome2.append(person_name)
+          if g.person_id in dome3:
+             dome3.remove(person_name)
+          elif g.person_id in dome4:
+             dome4.remove(person_name)
+          elif g.person_id in dome1:
+             dome1.remove(person_name)
+       if g.device_id == "beacon3":
+          data['Location'] = location
+          data['Name'] = person_name
+          data['Band'] = g.person_id
+          dome3.append(person_name)
+          if g.person_id in dome2:
+             dome2.remove(person_name)
+          elif g.person_id in dome1:
+             dome1.remove(person_name)
+          elif g.person_id in dome4:
+             dome4.remove(person_name)
+       if g.device_id == "beacon4":
+          data['Location'] = location
+          data['Name'] = person_name
+          data['Band'] = g.person_id
+          dome4.append(person_name)
+          if g.person_id in dome2:
+             dome2.remove(person_name)
+          elif g.person_id in dome3:
+             dome3.remove(person_name)
+          elif g.person_id in dome1:
+             dome1.remove(person_name)
     '''
     file_basename = 'output.csv'
     server_path = os.path.dirname(os.path.abspath(__file__))
@@ -129,8 +130,8 @@ def trackPerson(device_id, person_id):
         w_file.write('%s,%s,%s,%s,%s,%s \n' %(data['Band'],data['Name'],data['Location'],data['In_Time'],data['Out_Time'],data['Date']))
     w_file.close()
 '''
-    email_alert(ifttt_key, data['Band'],data['Name'],data['Location'])
-    return "<h3> OK </h3>"
+       email_alert(ifttt_key, data['Band'],data['Name'],data['Location'])
+       return "<h3> OK </h3>"
 
 
 
