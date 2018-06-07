@@ -4,10 +4,11 @@ app = Flask(__name__)
 
 import os
 import os.path
+import requests
 import time
 import csv
 data = {'Band': 'A1', 'Name': 'Alex', 'Location': 'Dome1', 'In_Time': "1", 'Out_Time': "2", 'Date': "15"}
-
+ifttt_key = ""
 
 
 app = Flask(__name__)
@@ -39,6 +40,14 @@ def getPlotCSV():
     response.mimetype='text/csv'
 
     return response
+   
+def error_email_alert(key, band_id, person_name, location):
+    report = {}
+    report["value1"] = band_id
+    report["value2"] = person_name
+    report["value3"] = location
+  
+    requests.post("https://maker.ifttt.com/trigger/error/with/key/" + str(key), data=report)    
 
 @app.route('/<device_id>/<person_id>')
 def trackPerson(device_id, person_id):
@@ -90,7 +99,7 @@ def trackPerson(device_id, person_id):
             dome3.remove(g.person_id)
         elif g.person_id in dome1:
             dome1.remove(g.person_id)
-
+    '''
     file_basename = 'output.csv'
     server_path = os.path.dirname(os.path.abspath(__file__))
     file_exists = os.path.isfile(server_path+file_basename)
@@ -106,8 +115,8 @@ def trackPerson(device_id, person_id):
     else:
         w_file.write('%s,%s,%s,%s,%s,%s \n' %(data['Band'],data['Name'],data['Location'],data['In_Time'],data['Out_Time'],data['Date']))
     w_file.close()
-
-    return "OK"    
+'''
+    email_alert(ifttt_key, data['Band'],data['Name'],data['Location'])
     return "<h3> OK </h3>"
 
 
