@@ -41,7 +41,7 @@ def getPlotCSV():
 
     return response
    
-def error_email_alert(key, band_id, person_name, location):
+def email_alert(key, band_id, person_name, location):
     report = {}
     report["value1"] = band_id
     report["value2"] = person_name
