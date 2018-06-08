@@ -71,7 +71,18 @@ def trackPerson(device_id, person_id):
        data['Location'] = location
        data['Name'] = person_name
        data['Band'] = g.person_id
-       email_alert(ifttt_key, data['Band'],data['Name'],data['Location'])
+       if g.device_id == "beacon1":
+          if person_name not in dome1:  
+             email_alert(ifttt_key, data['Band'],data['Name'],data['Location'])
+       if g.device_id == "beacon2":
+          if person_name not in dome2:  
+             email_alert(ifttt_key, data['Band'],data['Name'],data['Location'])
+       if g.device_id == "beacon3":
+          if person_name not in dome3:  
+             email_alert(ifttt_key, data['Band'],data['Name'],data['Location'])
+       if g.device_id == "beacon4":
+          if person_name not in dome4:  
+             email_alert(ifttt_key, data['Band'],data['Name'],data['Location'])         
     data['Location'] = location
     data['Name'] = person_name
     data['Band'] = g.person_id
